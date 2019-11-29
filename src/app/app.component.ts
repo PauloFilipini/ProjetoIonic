@@ -25,6 +25,11 @@ export class AppComponent {
       title: 'Cadastrar',
       url: '/cadastro',
       icon: 'cadastrar'
+    },
+    {
+      title: 'Tela Inicial',
+      url: '/tela-inicial',
+      icon: 'tela-inicial'
     }
   ];
 
