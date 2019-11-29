@@ -25,6 +25,11 @@ export class AppComponent {
       title: 'Login',
       url: '/login',
       icon: 'login'
+    },
+    {
+      title: 'Cadastrar',
+      url: '/cadastro',
+      icon: 'cadastrar'
     }
   ];
 
