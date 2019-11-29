@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
   }
-
+  appPages = [
+    {
+      title: 'Home',
+      url: '/home',
+      icon: 'home'
+    },
+    {
+      title: 'Cadastrar',
+      url: '/cadastro',
+      icon: 'cadastrar'
+    }
+  ]
 }
