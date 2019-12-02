@@ -11,11 +11,4 @@ export class CadastroPage implements OnInit {
 
   ngOnInit() {
   }
-  appPages = [
-    {
-      title: 'Login',
-      url: '/login',
-      icon: 'login'
-    }
-  ]
 }
