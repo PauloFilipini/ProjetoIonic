@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Autenticacao } from './../autenticacao.service';
+import { FormGroup, FormControl, Form } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,20 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
   
-  constructor() { }
+  public formulario: FormGroup = new FormGroup({
+    'email': new FormControl(null),
+    'senha': new FormControl(null)
+  })
+ 
+  constructor(private autenticacao: Autenticacao) { }
 
   ngOnInit() {
   }
-  appPages = [
-    {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'Cadastrar',
-      url: '/cadastro',
-      icon: 'cadastrar'
-    }
-  ]
+  public autenticar(): void {
+    this.autenticacao.autenticar(
+      this.formulario.value.email,
+      this.formulario.value.senha)
+    
+  }
 }

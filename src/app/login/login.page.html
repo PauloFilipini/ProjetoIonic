@@ -9,12 +9,13 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <form [formGroup]="formulario" (ngSubmit) = "autenticar()">
     <ion-row>
         <ion-col class="test">
               <ion-item>
                   <ion-icon name="at"></ion-icon>
                   <ion-label>Email: </ion-label>
-                  <ion-input type ="email" ></ion-input>
+                  <ion-input type ="email" formControlName="email"></ion-input>
                 </ion-item>
         </ion-col>
       </ion-row>
@@ -22,13 +23,13 @@
           <ion-col class="test">
               <ion-item>
                   <ion-label>Password: </ion-label>
-                  <ion-input type ="password" ></ion-input>
+                  <ion-input type ="password"  formControlName="senha"></ion-input>
                 </ion-item>
           </ion-col>
         </ion-row>
         <ion-row>
             <ion-col class="test">
-                <ion-button color="danger" routerLink="/home">Sign in</ion-button>
+                <ion-button color="danger" type="submit" routerLink="/home">Sign in</ion-button>
             </ion-col>
           </ion-row>       
           <ion-row>
@@ -45,4 +46,5 @@
                       </button>
                 </ion-col>
               </ion-row>    
+            </form>
 </ion-content>
