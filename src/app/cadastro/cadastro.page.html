@@ -7,44 +7,47 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<ion-row>
-        <ion-col class="test">
-            <ion-item>
-                <ion-label>Name: </ion-label>
-                <ion-input type ="text" ></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Email: </ion-label>
-                  <ion-input type ="email" ></ion-input>
-                </ion-item>
-        </ion-col>
-      </ion-row>
+  <form   [formGroup] ="formulario"  (ngSubmit) = "cadastrarUsuario()">
       <ion-row>
-          <ion-col class="test">
-              <ion-item>
-                  <ion-label>Password: </ion-label>
-                  <ion-input type ="password" ></ion-input>
+          <ion-col class="test" >
+              <ion-item  class="form-group">
+                  <ion-label>Name: </ion-label>
+                  <ion-input type ="text" formControlName="nome_completo"></ion-input>
                 </ion-item>
+                <ion-item  class="form-group">
+                    <ion-label>Email: </ion-label>
+                    <ion-input formControlName="email"></ion-input>
+                  </ion-item>
           </ion-col>
         </ion-row>
         <ion-row>
             <ion-col class="test">
-                <ion-item>
-                    <ion-label>Confirm Password: </ion-label>
-                    <ion-input type ="password" ></ion-input>
+                <ion-item class="form-group">
+                    <ion-label>Password: </ion-label>
+                    <ion-input type ="password" formControlName="senha" ></ion-input>
                   </ion-item>
             </ion-col>
           </ion-row>
-        <ion-row>
-            <ion-col class="test">
-                <ion-button color="danger" routerLink="/login">Create your account </ion-button>
-            </ion-col>
-          </ion-row>       
           <ion-row>
               <ion-col class="test">
-                  <button class="ion-activatable" >
-                     By creating an account you agree to the Terms of use
-                    </button>
+                  <ion-item class="form-group">
+                      <ion-label>Confirm Password: </ion-label>
+                      <ion-input type ="password" formControlName="confirma_senha" ></ion-input>
+                    </ion-item>
               </ion-col>
-            </ion-row>    
+            </ion-row>
+          <ion-row>
+              <ion-col class="test">
+                  <ion-button color="danger" type= "submit" routerLink="/login">Create your account </ion-button>
+              </ion-col>
+            </ion-row>       
+            <ion-row>
+                <ion-col class="test">
+                    <button class="ion-activatable" type= "submit" >
+                       By creating an account you agree to the Terms of use
+                      </button>
+                </ion-col>
+              </ion-row>    
+  </form>
+
 </ion-content>
