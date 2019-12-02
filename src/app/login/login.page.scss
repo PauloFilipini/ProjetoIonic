@@ -1,14 +1,29 @@
-.login {
-    text-align: center !important;
-    color: red;
-}
-.test {
+.titulo {
+    font-size: 48px;
+    color: #E91D29;
+    font-weight: bold;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: white
-}
-.ion-activatable {
+    height: 3.5em;
     position: relative;
-    overflow: hidden;
-  }
+    top: 15%;
+
+}
+.form {
+    top:10%;
+    bottom:40%;
+    align-items: center;
+    width: 100%; 
+    
+    
+}
+.botao {
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+
+}
+
+.ion-activatable{
+    text-align: center;
+   
+}

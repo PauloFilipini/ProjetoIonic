@@ -6,22 +6,27 @@
     <ion-title class= "cadastro">Create account</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content class="ion-padding">
   <form   [formGroup] ="formulario"  (ngSubmit) = "cadastrarUsuario()">
       <ion-row>
-          <ion-col class="test" >
+          <ion-col class="form" >
               <ion-item  class="form-group">
                   <ion-label>Name: </ion-label>
                   <ion-input type ="text" formControlName="nome_completo"></ion-input>
                 </ion-item>
-                <ion-item  class="form-group">
-                    <ion-label>Email: </ion-label>
-                    <ion-input formControlName="email"></ion-input>
-                  </ion-item>
+                
           </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col class="test">
+          <ion-col class = "form">
+              <ion-item  class="form-group">
+                  <ion-label>Email: </ion-label>
+                  <ion-input formControlName="email"></ion-input>
+                </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="form">
                 <ion-item class="form-group">
                     <ion-label>Password: </ion-label>
                     <ion-input type ="password" formControlName="senha" ></ion-input>
@@ -29,7 +34,7 @@
             </ion-col>
           </ion-row>
           <ion-row>
-              <ion-col class="test">
+              <ion-col class="form">
                   <ion-item class="form-group">
                       <ion-label>Confirm Password: </ion-label>
                       <ion-input type ="password" formControlName="confirma_senha" ></ion-input>
@@ -37,12 +42,12 @@
               </ion-col>
             </ion-row>
           <ion-row>
-              <ion-col class="test">
+              <ion-col class="botao">
                   <ion-button color="danger" type= "submit" routerLink="/login">Create your account </ion-button>
               </ion-col>
             </ion-row>       
             <ion-row>
-                <ion-col class="test">
+                <ion-col class="termo">
                     <button class="ion-activatable" type= "submit" >
                        By creating an account you agree to the Terms of use
                       </button>
