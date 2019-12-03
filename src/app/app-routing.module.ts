@@ -20,10 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
   {
-    path: 'tela-inicial',
-    loadChildren: () => import('./tela-inicial/tela-inicial.module').then( m => m.TelaInicialPageModule)
-  },
-  {
     path: '',
     loadChildren: () => import('./splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
   }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -14,11 +13,6 @@ import * as firebase from 'firebase'
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    {
       title: 'Login',
       url: '/login',
       icon: 'login'
@@ -28,16 +22,6 @@ export class AppComponent {
       url: '/cadastro',
       icon: 'cadastrar'
     },
-    {
-      title: 'Tela Inicial',
-      url: '/tela-inicial',
-      icon: 'tela-inicial'
-    },
-    {
-      title: 'Screen',
-      url: '/splashscreen',
-      icon: 'splash'
-    }
   ];
 
   constructor(
