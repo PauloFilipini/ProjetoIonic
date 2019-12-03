@@ -32,6 +32,11 @@ export class AppComponent {
       title: 'Tela Inicial',
       url: '/tela-inicial',
       icon: 'tela-inicial'
+    },
+    {
+      title: 'Screen',
+      url: '/splashscreen',
+      icon: 'splash'
     }
   ];
 

@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {
@@ -22,7 +22,12 @@ const routes: Routes = [
   {
     path: 'tela-inicial',
     loadChildren: () => import('./tela-inicial/tela-inicial.module').then( m => m.TelaInicialPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
   }
+
 
 ];
 
