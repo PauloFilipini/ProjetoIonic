@@ -6,30 +6,33 @@
     height: 3.5em;
     position: relative;
     top: 15%;
-
 }
-.form{
+.form
+{
     top:10%;
     bottom:40%;
     align-items: center;
     width: 100%; 
-    background-color: #F1F5F6;
-    
-    
+    background-color: #F1F5F6;   
 }
 ion-button {
     text-align: center;
     font-size: 14px;
     width: 100%;
     background: #e91d29;
-    color: #F1F5F6
-
-
+    color: #F1F5F6;
 }
-
-.ion-activatable{
+.esqueciSenha {
+    color: #8b999f;  
+    font-size: 14;
+    font-family: "Open Sans";
+}
+.cadastro{
+    color: #8b999f;
+    margin-top: 95px;
+    font-family: "Open Sans";
+    font-size: 18px;
     text-align: center;
-   
 }
 ion-content{
     --ion-background-color:#F1F5F6;
