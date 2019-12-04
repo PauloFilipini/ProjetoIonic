@@ -21,10 +21,16 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
+  ngOnDestroy() {
+  this.formulario.value.email = ' '
+  this.formulario.value.senha = ' '
+  }
+
   public autenticar(): void {
     this.autenticacao.autenticar(
       this.formulario.value.email,
       this.formulario.value.senha)
+      this.ngOnDestroy()
     
   }
 
