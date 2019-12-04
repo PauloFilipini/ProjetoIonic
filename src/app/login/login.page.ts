@@ -1,7 +1,8 @@
-import { AlertController } from '@ionic/angular';
+import { AlertController, Platform } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Autenticacao } from './../autenticacao.service';
 import { FormGroup, FormControl} from '@angular/forms';
+
 
 
 @Component({
@@ -17,7 +18,9 @@ export class LoginPage implements OnInit {
   })
  
   constructor(private autenticacao: Autenticacao,
-    public alertController: AlertController ) { }
+    public alertController: AlertController,
+    platform: Platform ) { 
+  }
 
   ngOnInit() {
   }
@@ -33,5 +36,4 @@ export class LoginPage implements OnInit {
       this.ngOnDestroy()
     
   }
-
 }
