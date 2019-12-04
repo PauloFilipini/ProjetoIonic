@@ -2,13 +2,17 @@ import { Usuario } from './module/usuario.model';
 import {Injectable} from '@angular/core'
 import {Router} from '@angular/router'
 import * as firebase from 'firebase'
+import { AlertController } from '@ionic/angular';
+
 
 @Injectable()
 export class Autenticacao {
 
     public token_id: string 
     
-    constructor(private router: Router){}
+    constructor(private router: Router,
+        public alertController: AlertController){}
+    
 
     public cadastrarUsuario(usuario: Usuario): Promise<any> {
        return firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.senha)
@@ -21,7 +25,7 @@ export class Autenticacao {
             .set(usuario)
         })
         .catch((error: Error)=> {
-            console.log(error)
+            this.presentAlert()
         })
     }
     public autenticar(email:string, senha:string): void { 
@@ -34,7 +38,10 @@ export class Autenticacao {
                 this.router.navigate(['/home'])
             })
         })
-        .catch((error: Error) => console.log(error))
+        .catch((error: Error) => 
+            {
+                this.presentAlert()
+            })
     }
     public autenticado(): boolean {
         if(this.token_id === undefined && localStorage.getItem('idToken') != null){
@@ -53,4 +60,13 @@ export class Autenticacao {
                 this.router.navigate(['/'])
             })
     }
-}
+    async presentAlert() {
+        const alert = await this.alertController.create({
+          header: 'Alert',
+          message: 'Dados Incorretos!!',
+          buttons: ['OK']
+        });
+    
+        await alert.present();
+      }
+    }

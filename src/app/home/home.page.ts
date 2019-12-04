@@ -21,9 +21,6 @@ export class HomePage {
   }
 
   logoff() {
-    this.autenticacao.token_id == null
-    if (this.autenticacao.token_id == null){
-      this.router.navigate(['/login'])
-    }
+    this.autenticacao.sair()
   }
 }

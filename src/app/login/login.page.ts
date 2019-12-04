@@ -1,6 +1,8 @@
+import { AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Autenticacao } from './../autenticacao.service';
 import { FormGroup, FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,8 @@ export class LoginPage implements OnInit {
     'senha': new FormControl(null)
   })
  
-  constructor(private autenticacao: Autenticacao) { }
+  constructor(private autenticacao: Autenticacao,
+    public alertController: AlertController ) { }
 
   ngOnInit() {
   }
@@ -24,4 +27,5 @@ export class LoginPage implements OnInit {
       this.formulario.value.senha)
     
   }
+
 }
