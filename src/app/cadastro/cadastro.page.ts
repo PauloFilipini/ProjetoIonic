@@ -8,7 +8,7 @@ import {FormGroup, FormControl} from '@angular/forms';
   selector: 'app-cadastro',
   templateUrl: './cadastro.page.html',
   styleUrls: ['./cadastro.page.scss'],
-  providers: [Autenticacao]
+  
 })
 export class CadastroPage implements OnInit {
   

@@ -1,7 +1,9 @@
+import { Autenticacao } from './autenticacao.service';
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Subscription } from 'rxjs';
 
 import * as firebase from 'firebase'
 
@@ -27,7 +29,8 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private autenticacao: Autenticacao
   ) {
     this.initializeApp();
   }
@@ -38,6 +41,9 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+  private subscription: Subscription
+  private logado: boolean = false
+
   ngOnInit(): void {
     var firebaseConfig = {
       apiKey: "AIzaSyB4XySbLEbAKnKP6kcZGtehgrXsy7VwFRU",
@@ -51,6 +57,10 @@ export class AppComponent {
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+    this.subscription = this.autenticacao.subject
+    .subscribe((res) => {
+      this.logado = this.autenticacao.autenticado();
+      console.log('logou/deslogou: ', this.logado);
+    })
   }
-  
 }

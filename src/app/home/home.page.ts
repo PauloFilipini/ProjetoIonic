@@ -7,7 +7,7 @@ import { Autenticacao } from './../autenticacao.service';
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  providers: [Autenticacao]
+  
 })
 export class HomePage {
 
