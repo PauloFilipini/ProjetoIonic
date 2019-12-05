@@ -57,7 +57,7 @@ export class Autenticacao {
             .then(() => {
                 localStorage.removeItem('idToken')
                 this.token_id = undefined
-                this.router.navigate(['/'])
+                this.router.navigate(['/login'])
             })
     }
     async presentAlert() {
