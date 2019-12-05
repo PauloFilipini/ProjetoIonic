@@ -25,6 +25,8 @@ export class AppComponent {
       icon: 'cadastrar'
     },
   ];
+  private subscription: Subscription
+  private logado: boolean  = false 
 
   constructor(
     private platform: Platform,
@@ -41,8 +43,7 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
-  private subscription: Subscription
-  private logado: boolean = false
+  
 
   ngOnInit(): void {
     var firebaseConfig = {
@@ -61,6 +62,7 @@ export class AppComponent {
     .subscribe((res) => {
       this.logado = this.autenticacao.autenticado();
       console.log('logou/deslogou: ', this.logado);
+      console.log('paulo',this.logado)
     })
   }
 }

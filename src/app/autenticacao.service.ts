@@ -12,8 +12,6 @@ export class Autenticacao {
 
     public token_id: string 
     
-    logado: boolean = false;
-
     subject = new Subject<Object>();
 
     constructor(private router: Router,
