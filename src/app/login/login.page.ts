@@ -25,8 +25,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
   ngOnDestroy() {
-  this.formulario.value.email = ' '
-  this.formulario.value.senha = ' '
+ this.formulario.reset()
   }
 
   public autenticar(): void {
