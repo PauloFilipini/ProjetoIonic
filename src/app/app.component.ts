@@ -14,18 +14,7 @@ import * as firebase from 'firebase'
   providers: [Autenticacao]
 })
 export class AppComponent {
-  public appPages = [
-    {
-      title: 'Login',
-      url: '/login',
-      icon: 'login'
-    },
-    {
-      title: 'Cadastrar',
-      url: '/cadastro',
-      icon: 'cadastrar'
-    },
-  ];
+
   private subscription: Subscription
   private logado: boolean  = false 
 
@@ -63,7 +52,6 @@ export class AppComponent {
     .subscribe((res) => {
       this.logado = this.autenticacao.autenticado();
       console.log('logou/deslogou: ', this.logado);
-      console.log('paulo',this.logado)
     })
   }
 }
