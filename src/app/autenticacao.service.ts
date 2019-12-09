@@ -68,8 +68,8 @@ export class Autenticacao {
     }
     async presentAlert() {
         const alert = await this.alertController.create({
-          header: 'Alert',
-          message: 'Dados Incorretos!!',
+          header: 'Dados Incorretos!!',
+          message: 'Tente Outra vez',
           buttons: ['OK']
         });
     
