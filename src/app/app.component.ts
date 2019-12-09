@@ -25,6 +25,7 @@ export class AppComponent {
     private autenticacao: Autenticacao
   ) {
     this.initializeApp();
+    this.statusBar.overlaysWebView(true);
   }
 
   initializeApp() {
@@ -54,4 +55,5 @@ export class AppComponent {
       console.log('logou/deslogou: ', this.logado);
     })
   }
+  
 }
