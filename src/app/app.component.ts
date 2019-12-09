@@ -25,12 +25,12 @@ export class AppComponent {
     private autenticacao: Autenticacao
   ) {
     this.initializeApp();
-    this.statusBar.overlaysWebView(true);
+    
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.overlaysWebView(true);
       this.splashScreen.hide();
     });
   }
