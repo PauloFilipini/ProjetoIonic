@@ -16,7 +16,7 @@ import * as firebase from 'firebase'
 export class AppComponent {
 
   private subscription: Subscription
-  private logado: boolean  = false 
+  logado: boolean  = false 
 
   constructor(
     private platform: Platform,
