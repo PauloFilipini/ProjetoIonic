@@ -23,4 +23,8 @@ export class HomePage {
   logoff() {
     this.autenticacao.sair()
   }
+
+  carrinho(){
+    window.open('https://www.youtube.com/')
+  }
 }
