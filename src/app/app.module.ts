@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { RestaurantesService } from './restaurantes.service';
 import { Autenticacao } from './autenticacao.service';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-
+import {AngularFireModule} from 'angularfire2'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule
   ],
   providers: [
     StatusBar,
