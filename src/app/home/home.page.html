@@ -10,7 +10,9 @@
                     <ion-title class= "home">Home</ion-title>
                 </ion-col>
                 <ion-col>
+                    <a routerLink="/carrinho">
                         <ion-icon name="cart"></ion-icon>
+                    </a>   
                 </ion-col>
          </ion-row>
     </ion-toolbar>
@@ -18,7 +20,7 @@
 <ion-content >
     <ion-row>
         <ion-col>
-            <ion-card (click) = "carrinho()">
+            <ion-card>
                 <ion-card>
                         <img src='./../../assets/pictures/comida.png'>
                 </ion-card>
