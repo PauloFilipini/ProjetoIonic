@@ -1,3 +1,4 @@
+import { RestaurantesService } from './restaurantes.service';
 import { Autenticacao } from './autenticacao.service';
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
@@ -11,7 +12,7 @@ import * as firebase from 'firebase'
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  providers: [Autenticacao]
+  providers: [Autenticacao, RestaurantesService]
 })
 export class AppComponent {
 
