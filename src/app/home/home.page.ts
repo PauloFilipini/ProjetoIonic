@@ -13,18 +13,21 @@ import { RestaurantesService } from './../restaurantes.service';
 })
 export class HomePage {
 
-
   public restaurantes: Restaurantes[]
 
   constructor(private autenticacao:Autenticacao,
     private router: Router,
     private RestaurantesService: RestaurantesService) {}
-
+    
   ngOnInit() {
+    
     this.RestaurantesService.getRestaurantes()
     .then((restaurantes: Restaurantes[] )  => {
        this.restaurantes = restaurantes
-       //console.log('restaurantes', restaurantes)
+       console.log('restaurantes', restaurantes)
+    })
+    .catch((err) =>{
+      console.log(err)
     })
   }
   ngOnDestroy() {

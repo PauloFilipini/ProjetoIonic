@@ -1,6 +1,7 @@
 import { Restaurantes } from './module/restaurante.model'
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as firebase from 'firebase'
 
 @Injectable()
 export class RestaurantesService {
@@ -11,19 +12,26 @@ export class RestaurantesService {
 
     getRestaurantes(): Promise<Restaurantes[]> {
         return new Promise((resolve, reject) => {
-            this.http.get<Restaurantes[]>(`http://localhost:3000/restaurants`)
-                .toPromise()
-                .then(res => resolve(res))
-                .catch(err => reject(err))
-        })
-    }
-
-    public getRestaurantesById(id: string): Promise<Restaurantes> {
-        return new Promise((resolve, reject) => {
-            this.http.get<Restaurantes>(`http://localhost:3000/restaurants?id=${id}`)
-                .toPromise()
-                .then(res => resolve(res))
-                .catch(err => reject(err))
-        })
-    }
+            firebase.database().ref(`restaurants`)
+            .once('value')
+            .then((snapshot: any) => {
+    
+                let restaurantes: Array<any> = [];
+    
+                snapshot.forEach((childSnapshot: any) => {
+    
+                    let restaurants= childSnapshot.val()
+                    restaurantes.push(restaurants)
+                    
+                })
+                resolve(restaurantes) 
+            })
+            .catch(reject)
+    })
 }
+}
+
+
+  
+
+       
