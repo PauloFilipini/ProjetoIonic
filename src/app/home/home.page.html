@@ -1,23 +1,19 @@
 <ion-header>
     <ion-toolbar>
             <ion-row>
-                <ion-col>
-        <a (click) = "logoff()">
-            <ion-icon name="log-out"></ion-icon>
-         </a>
-                </ion-col>
-                <ion-col>
-                    <ion-title class= "home">Home</ion-title>
-                </ion-col>
-                <ion-col>
+                    <a (click) = "logoff()">
+                        <ion-icon name="log-out"></ion-icon>
+                    </a>
+                        <ion-title>
+                            Home
+                        </ion-title>
                     <a routerLink="/carrinho">
-                        <ion-icon name="cart"></ion-icon>
+                        <ion-icon name="cart" class="car"></ion-icon>
                     </a>   
-                </ion-col>
          </ion-row>
     </ion-toolbar>
   </ion-header>
-<ion-content  >
+<ion-content >
     <ion-row *ngFor="let restaurante of restaurantes">
             <a [routerLink]="['/restaurante', restaurante.id]" >
         <ion-col>

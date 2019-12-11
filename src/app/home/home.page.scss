@@ -1,26 +1,33 @@
-.titulo{
-  color: #8b999f;
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 19px;
-}
-.categoria{
-  width: 31.96px;
-  height: 19px;
-  color: #8b999f;
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 19px;
-}
+
 ion-icon{
   font-size: 25px;
   color: red;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .home{
-  align-items: center;
+align-items: center;
  margin-top: 10px;
+ font-size: 15px;
+}
+ion-card{
+  margin-top: 5px;
+}
+.titulo{
+  font-size: 15px;
+  font-family: "Open Sans";
+}
+  .preco{
+    font-size: 15px;
+    font-family: "Open Sans";
+  }
+  ion-title{
+    font-family: "Open Sans";
+    font-size: 25px;
+    text-align: center;
+  }
+.car{
+  text-align: right;
+  margin-right: 20px;
+  font-size: 25px;
 }
