@@ -29,9 +29,27 @@ export class RestaurantesService {
             .catch(reject)
     })
 }
+public getRestaurantesById(id: String): Promise<Restaurantes[]> {
+    return new Promise((resolve, reject) => {
+        firebase.database().ref(`restaurants`)
+            .once('value')
+            .then((snapshot: any) => {
+    
+                let id: Array<any> = [];
+    
+                snapshot.forEach((childSnapshot: any) => {
+    
+                    let idrest= childSnapshot.val()
+                    id.push(idrest)
+                    
+                })
+                resolve(id)
+                console.log('paulo2', id)
+    })
+})
 }
 
-
+}
   
 
        
