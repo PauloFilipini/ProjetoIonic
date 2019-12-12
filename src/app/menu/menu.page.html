@@ -5,7 +5,15 @@
 </ion-header>
 
 <ion-content>
-    <ion-card>
-      
-    </ion-card>
+      <div *ngFor="let produto of produtos">
+        <div class="menu-item-info-box">
+          <span class="menu-item-info-box-icon"><img [src]="produto.imagePath"></span>
+          <div class="menu-item-info-box-content">
+            <span class="menu-item-info-box-text">{{ produto.name }}</span>
+            <span class="menu-item-info-box-detail">{{ produto.description }}</span>
+        </div>
+        </div>
+        </div>
+
+ 
 </ion-content>

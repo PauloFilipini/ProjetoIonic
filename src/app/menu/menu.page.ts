@@ -31,12 +31,11 @@ export class MenuPage implements OnInit {
     this.itensCarrinho = this.carrinhoService.exibirItens()
     this.total = this.carrinhoService.totalCarrinhoCompras()
     //console.log(this.itensCarrinho)
-    this.route.parent.params.subscribe((parametros: Params) => {
-      this.produtoService.getProdutoByRestaurantId(parametros.id)
-        .then(( produtos: Produto[] ) => {
-          this.produtos = produtos
-  })
-})
+    this.produtoService.getProdutoByRestaurantId()
+    .then(( produtos: Produto[] ) =>{
+      this.produtos = produtos
+      console.log('paulo', produtos)
+    })
   }
   public adicionarItemCarrinho(produto: Produto): void {
     this.carrinhoService.incluirItem(produto)

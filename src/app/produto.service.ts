@@ -1,7 +1,7 @@
 import { Produto } from './module/produto.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import * as firebase from 'firebase'
 @Injectable()
 export class ProdutoService {
 
@@ -9,11 +9,27 @@ export class ProdutoService {
         private http: HttpClient
     ){}
 
-    public getProdutoByRestaurantId(restaurantId: string): Promise<Produto[]> {
+    public getProdutoByRestaurantId(): Promise<Produto[]> {
         return new Promise((resolve, reject) => {
-            this.http.get<Produto[]>(`http://localhost:3000/menu?restaurantId=${restaurantId}`)
-                .toPromise()
-                .then(res => resolve(res))
+                firebase.database().ref(`menu`)
+                
+                .once('value')
+                .then((snapshot: any) => {
+    
+                    let id: Array<Produto> = [];
+        
+                   
+                    snapshot.forEach((childSnapshot: any) => {
+        
+                       
+                        id.push(childSnapshot.val())
+                        
+                        
+                    })
+                    const produtos = id.filter(produto => produto.restaurantId == "bread-bakery");
+                        resolve(produtos) 
+                    console.log('ola',produtos)
+                })
                 .catch(err => reject(err))
         })
     }
