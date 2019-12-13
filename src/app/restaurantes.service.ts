@@ -40,11 +40,9 @@ public getRestaurantesById(id: String): Promise<Restaurantes[]> {
                 snapshot.forEach((childSnapshot: any) => {
     
                     let idrest= childSnapshot.val()
-                    id.push(idrest)
-                    
+                    id.push(idrest)           
                 })
                 resolve(id)
-                console.log('paulo2', id)
     })
 })
 }

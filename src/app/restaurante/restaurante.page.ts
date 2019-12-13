@@ -23,8 +23,24 @@ export class RestaurantePage implements OnInit {
     this.route.paramMap.subscribe(parametros => {
       this.restauranteService.getRestaurantesById(parametros.get("id"))
       .then(( restaurante: Restaurantes[] ) => {
-        this.restaurante = restaurante[0]
-        console.log('restaurante', restaurante[0])
+        if(parametros.get("id") == 'bread-bakery'){
+          this.restaurante = restaurante[0]
+        }
+        if(parametros.get("id") == 'burger-house'){
+          this.restaurante = restaurante[1]
+        }
+        if(parametros.get("id") == 'coffee-corner'){
+          this.restaurante = restaurante[2]
+        }
+        if(parametros.get("id") == 'green-food'){
+          this.restaurante = restaurante[3]
+        }
+        if(parametros.get("id") == 'ice-cream'){
+          this.restaurante = restaurante[4]
+        }
+        if(parametros.get("id") == 'tasty-treats'){
+          this.restaurante = restaurante[5]
+        }
       })
     })
   }
