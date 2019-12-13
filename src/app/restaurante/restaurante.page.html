@@ -38,6 +38,9 @@
         <ion-row class = "description">
           <span class="menu-item-info-box-detail">{{ produto.description }}</span>
        </ion-row>  
+       <ion-row class = "description">
+        <span class="menu-item-info-box-price">{{ produto.price | currency:'BRL' }}</span>
+      </ion-row> 
        <ion-icon name="add-circle"></ion-icon>
           <a (click)="adicionarItemCarrinho(produto)"> Adicionar</a>
       </ion-col>
