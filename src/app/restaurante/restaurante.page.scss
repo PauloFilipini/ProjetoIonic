@@ -22,13 +22,16 @@ ion-title{
     font-family: "Open Sans";
 
 }
-.frete{
+.frete-total{
     font-size: 15px;
+    margin-left: 15px
 }
-.total{
-    font-size:15px;
-}
-.limpar{
-    font-size: 15px;
-    font-family: "Open Sans";
+
+
+ion-button{
+    text-align: center;
+    background: #e91d29;
+    color: black;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
