@@ -9,7 +9,7 @@ export class ProdutoService {
         private http: HttpClient
     ){}
 
-    public getProdutoByRestaurantId(): Promise<Produto[]> {
+    public getProdutoByRestaurantId(idp:String): Promise<Produto[]> {
         return new Promise((resolve, reject) => {
                 firebase.database().ref(`menu`)
                 
@@ -26,7 +26,8 @@ export class ProdutoService {
                         
                         
                     })
-                    const produtos = id.filter(produto => produto.restaurantId == "bread-bakery");
+                    const produtos = id.filter(produto => produto.restaurantId == idp )
+                    ;
                         resolve(produtos) 
                     console.log('ola',produtos)
                 })

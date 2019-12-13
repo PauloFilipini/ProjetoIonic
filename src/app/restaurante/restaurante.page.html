@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
     <ion-title>restaurante</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,5 +22,26 @@
     <dt>Horários: </dt>
     <dd>{{restaurante.hours}}</dd>
   </ion-card-content>
+</ion-card>
+  <ion-card>
+  <div *ngFor="let produto of produtos">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <span class="menu-item-info-box-icon"><img [src]="produto.imagePath"></span>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-row class ="name">
+          <span class="menu-item-info-box-text">{{ produto.name }}</span>
+        </ion-row>
+        <ion-row class = "description">
+          <span class="menu-item-info-box-detail">{{ produto.description }}</span>
+       </ion-row>  
+       <ion-icon name="add-circle"></ion-icon>
+          <a (click)="adicionarItemCarrinho(produto)"> Adicionar</a>
+      </ion-col>
+    </ion-row>
+    </div>
 </ion-card>
   </ion-content>
