@@ -1,6 +1,7 @@
 import { environment } from './../environments/environment';
 import { RestaurantesService } from './restaurantes.service';
 import { Autenticacao } from './autenticacao.service';
+import {CarrinhoService} from './carrinho.service'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -27,7 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Autenticacao, RestaurantesService
+    Autenticacao, RestaurantesService,CarrinhoService
   ],
   bootstrap: [AppComponent]
 })

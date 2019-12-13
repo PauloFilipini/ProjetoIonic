@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { CarrinhoPageRoutingModule } from './carrinho-routing.module';
@@ -13,7 +12,8 @@ import { CarrinhoPage } from './carrinho.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CarrinhoPageRoutingModule
+    CarrinhoPageRoutingModule,
+    ReactiveFormsModule,
   ],
   declarations: [CarrinhoPage]
 })
