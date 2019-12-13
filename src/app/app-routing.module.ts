@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'cadastro',
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
-  },  {
+  },
+  {
     path: 'carrinho',
     loadChildren: () => import('./carrinho/carrinho.module').then( m => m.CarrinhoPageModule)
   },
@@ -31,8 +32,8 @@ const routes: Routes = [
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
   },
   {
-    path: 'restaurante',
-    loadChildren: () => import('./restaurante/restaurante.module').then( m => m.RestaurantePageModule)
+    path: 'restaurante/:id',
+    loadChildren: () => import('./restaurante/restaurante.module').then( m => m.RestaurantePageModule),
   },
 
 ];
