@@ -28,10 +28,6 @@ const routes: Routes = [
     loadChildren: () => import('./carrinho/carrinho.module').then( m => m.CarrinhoPageModule)
   },
   {
-    path: 'menu',
-    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
-  },
-  {
     path: 'restaurante/:id',
     loadChildren: () => import('./restaurante/restaurante.module').then( m => m.RestaurantePageModule),
   },

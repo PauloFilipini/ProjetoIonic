@@ -44,4 +44,61 @@
     </ion-row>
     </div>
 </ion-card>
+
+<!--Carrinho -->
+<ion-card>
+  <ion-card>
+  <ion-row>
+    <ion-col>
+      <ion-icon name="cart" class="carrinho"></ion-icon>
+    </ion-col>
+    <ion-col>
+      <h3 class="box-title">Carrinho</h3>
+    </ion-col>
+  </ion-row>
+  </ion-card>
+  <ion-row>
+    <ion-col>
+            <tr *ngFor="let item of itensCarrinho">
+              <th>{{ item.item }} x {{ item.quantidade }}</th>&nbsp;
+              <td class="text-right">{{ item.subtotal | currency:'BRL' }}</td>
+            </tr>
+          <tr class= "frete">
+            <th>Frete:</th>&nbsp;
+            <td class="text-right">R$ 0,00</td>
+          </tr>
+          <tr class = "total">
+            <th>Total:</th>&nbsp;
+            <td class="text-right">{{ total | currency:'BRL' }}</td>
+          </tr>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    
+    <div class="pull-right" *ngIf="itensCarrinho.length === 0">
+      <ion-col>
+      <button
+        type="button"
+        class="limpar"
+        (click)="limparCarrinho()"
+        disabled
+      > Limpar</button>
+      &nbsp;
+    </ion-col>
+    <ion-col>
+      <a class="pedido" disabled> Fechar Pedido</a>
+    </ion-col>
+    </div>
+</ion-row>
+    <div class="pull-right" *ngIf="itensCarrinho.length !== 0">
+      <button
+        type="button"
+        class="limpar"
+        (click)="limparCarrinho()"
+      > Limpar</button>
+      &nbsp;
+      <a routerLink="/pedido" class="pedido">Fechar Pedido</a>
+  </div>
+</ion-card>
+
   </ion-content>
