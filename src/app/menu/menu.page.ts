@@ -28,25 +28,7 @@ export class MenuPage implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.itensCarrinho = this.carrinhoService.exibirItens()
-    this.total = this.carrinhoService.totalCarrinhoCompras()
-    //console.log(this.itensCarrinho)
-    this.produtoService.getProdutoByRestaurantId()
-    .then(( produtos: Produto[] ) =>{
-      this.produtos = produtos
-      console.log('paulo', produtos)
-    })
-  }
-  public adicionarItemCarrinho(produto: Produto): void {
-    this.carrinhoService.incluirItem(produto)
-    this.itensCarrinho = this.carrinhoService.exibirItens()
-    this.total = this.carrinhoService.totalCarrinhoCompras()
-  }
 
-  public limparCarrinho(produto: Produto): void {
-    this.carrinhoService.limparCarrinho()
-    this.itensCarrinho = this.carrinhoService.exibirItens()
-    this.total = this.carrinhoService.totalCarrinhoCompras()
-  }
+}
 
 }
