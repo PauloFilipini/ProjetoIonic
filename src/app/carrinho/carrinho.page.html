@@ -63,11 +63,12 @@
             </div>
           </ion-card>
           <ion-card>
-                <p class="lead">Formas de Pagamento:</p>
+                <p class="frete">Formas de Pagamento:</p>
                   <div class="form-group">
-                    <div>
+                    <div class= "frete">
                       <ion-label>
-                        <div class="exemplo-radio">    <input type="radio" value="dinheiro" name="formaPagamento"  formControlName="formaPagamento"/>    
+                        <div class="exemplo-radio">   
+                           <input type="radio" value="dinheiro" name="formaPagamento"  formControlName="formaPagamento" />    
                           <ion-label for="campo-radio1">Dinheiro</ion-label>    
                           <input type="radio" value="debito" name="formaPagamento" formControlName="formaPagamento"/>    
                                    Debito                 
@@ -77,8 +78,7 @@
                       <small  *ngIf="formulario.get('formaPagamento').valid && formulario.get('formaPagamento').touched" class="form-text text-success">Forma de Pagamento valida</small>
                       <small  *ngIf="formulario.get('formaPagamento').invalid && formulario.get('formaPagamento').touched" class="form-text text-success">Forma de Pagamento Invalido</small>
                   </div>
-                <p class="lead">Frete e Total:</p> &nbsp;
-                  <table class="table">
+                <p class="frete">Frete e Total:</p>
                     <tbody><tr>
                       <th style="width:50%">Itens:</th> &nbsp;
                       <td class="text-right">{{ total| currency:'BRL' }}</td>
@@ -91,7 +91,7 @@
                       <th>Total:</th> &nbsp;
                       <td class="text-right">{{ total| currency:'BRL' }}</td>
                     </tr>
-                  </tbody></table>
+                  </tbody>
                 </ion-card>
                 <div class="row"  *ngIf="itensCarrinho.length === 0 || formulario.get('endereco').invalid  || formulario.get('numero').invalid || formulario.get('formaPagamento').invalid"
                 >
