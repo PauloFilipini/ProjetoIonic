@@ -41,26 +41,24 @@
                 Itens do Pedido
               </h5>
               <tr *ngFor="let itens of itensCarrinho">
-                <ion-col>
-                      <th class="text-center">Quantidade:</th>
-                      <ion-col>
-                        <a class="btn btn-sm" (click)="diminuir(itens)"><i class="fa fa-minus"></i></a>
-                        {{itens.quantidade}}
-                        <a class="btn btn-sm" (click)="adicionar(itens)"><i class="fa fa-plus"></i></a>
-                      </ion-col>
-                    </ion-col>
-                <ion-col>
-                      <th>Item:</th>
-                      <ion-col>
-                        <td>{{ itens.item }}</td>
-                      </ion-col>
-                    </ion-col>
-                    <ion-col>
-                      <th class="text-right">Subtotal:</th>
-                      <ion-col>
-                        <td class="text-right">{{ itens.subtotal | currency:'BRL' }}</td>
-                      </ion-col>
-                    </ion-col>  
+
+                <ion-row class ="item">
+                  <th>Item: </th> &nbsp;
+                    <td> {{ itens.item }}</td>
+                </ion-row>
+
+                  <ion-row class ="quantidade">
+                      <th class="text-center">Quantidade: </th> &nbsp;   
+                        <a class="btn btn-sm" (click)="diminuir(itens)"><i class="fa fa-minus">-</i></a>
+                         {{itens.quantidade}}
+                        <a class="btn btn-sm" (click)="adicionar(itens)"><i class="fa fa-plus">+</i></a>
+                    </ion-row>
+
+                      <ion-row class="subtotal">
+                      <th class="text-right">Subtotal: </th> &nbsp;
+                        <td class="text-right"> {{ itens.subtotal | currency:'BRL' }}</td>
+                    </ion-row>
+ 
                   </tr>
             </div>
           </ion-card>
@@ -79,18 +77,18 @@
                       <small  *ngIf="formulario.get('formaPagamento').valid && formulario.get('formaPagamento').touched" class="form-text text-success">Forma de Pagamento valida</small>
                       <small  *ngIf="formulario.get('formaPagamento').invalid && formulario.get('formaPagamento').touched" class="form-text text-success">Forma de Pagamento Invalido</small>
                   </div>
-                <p class="lead">Frete e Total:</p>
+                <p class="lead">Frete e Total:</p> &nbsp;
                   <table class="table">
                     <tbody><tr>
-                      <th style="width:50%">Itens:</th>
+                      <th style="width:50%">Itens:</th> &nbsp;
                       <td class="text-right">{{ total| currency:'BRL' }}</td>
                     </tr>
                     <tr>
-                      <th>Frete:</th>
+                      <th>Frete:</th> &nbsp;
                       <td class="text-right">R$ 0,00</td>
                     </tr>
                     <tr>
-                      <th>Total:</th>
+                      <th>Total:</th> &nbsp;
                       <td class="text-right">{{ total| currency:'BRL' }}</td>
                     </tr>
                   </tbody></table>
