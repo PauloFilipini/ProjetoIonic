@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pedido } from './shared/pedido.model';
+import { Pedido } from './module/pedido.model';
 import { map} from 'rxjs/operators'
 
 @Injectable()
