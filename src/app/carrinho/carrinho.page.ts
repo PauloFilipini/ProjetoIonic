@@ -13,7 +13,7 @@ import { PedidoService } from './../pedido.service';
   selector: 'app-carrinho',
   templateUrl: './carrinho.page.html',
   styleUrls: ['./carrinho.page.scss'],
-  providers: [ PedidoService ]
+  providers: [ PedidoService]
 })
 export class CarrinhoPage implements OnInit {
 
@@ -36,6 +36,7 @@ export class CarrinhoPage implements OnInit {
   ngOnInit() {
     this.total = this.carrinhoService.totalCarrinhoCompras()
     this.itensCarrinho = this.carrinhoService.exibirItens()
+    console.log('carrinho', this.itensCarrinho )
   }
   public confirmarCompra(): void {
     
@@ -50,7 +51,7 @@ export class CarrinhoPage implements OnInit {
         .subscribe((idPedido: number) =>{
           this.idPedidoCompra = idPedido,
           this.carrinhoService.limparCarrinho()
-          this.router.navigate(['/pedidoCompleto'])
+          this.router.navigate(['/pedido-completo'])
       }) 
   
 }

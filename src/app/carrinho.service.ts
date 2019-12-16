@@ -5,7 +5,9 @@ class CarrinhoService {
     public itens: ItemCarrinho[] = []
 
     public exibirItens(): ItemCarrinho[] {
+        console.log('itens', this.itens)
         return this.itens
+        
     }
 
     public incluirItem(produto: Produto){

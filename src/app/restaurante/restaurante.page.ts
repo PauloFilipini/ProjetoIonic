@@ -13,7 +13,7 @@ import { CarrinhoService } from '../carrinho.service'
   selector: 'app-restaurante',
   templateUrl: './restaurante.page.html',
   styleUrls: ['./restaurante.page.scss'],
-  providers: [ RestaurantesService, ProdutoService , CarrinhoService ]
+  providers: [ RestaurantesService, ProdutoService ]
 })
 export class RestaurantePage implements OnInit {
 
@@ -66,6 +66,7 @@ export class RestaurantePage implements OnInit {
     this.carrinhoService.incluirItem(produto)
     this.itensCarrinho = this.carrinhoService.exibirItens()
     this.total = this.carrinhoService.totalCarrinhoCompras()
+    console.log('carrinho2', this.itensCarrinho)
   }
 
   public limparCarrinho(produto: Produto): void {
