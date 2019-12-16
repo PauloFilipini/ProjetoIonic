@@ -48,13 +48,10 @@ export class CarrinhoPage implements OnInit {
       this.carrinhoService.exibirItens()
       )
         this.pedidoService.efetivarCompra(pedido)
-        .subscribe((idPedido: number) =>{
-          this.idPedidoCompra = idPedido,
           this.carrinhoService.limparCarrinho()
           this.router.navigate(['/pedido-completo'])
-      }) 
+      }
   
-}
 
 public adicionar(item: ItemCarrinho): void {
   this.carrinhoService.adicionarQuantidade(item)

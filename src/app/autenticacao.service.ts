@@ -23,6 +23,7 @@ export class Autenticacao {
         .then((resposta:any) =>{
             // removendo senha do atributo senha do objeto do usuario
             delete usuario.senha
+            delete usuario.confirma_senha
 
             // registrando dados complementares do usuario no path email na base64
             firebase.database().ref(`usuario_detalhe/${btoa(usuario.email)}`)
