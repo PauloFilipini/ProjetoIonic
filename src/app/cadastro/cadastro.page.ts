@@ -38,7 +38,6 @@ export class CadastroPage implements OnInit {
 
     )
     this.autenticacao.cadastrarUsuario(usuario)
-    console.log('paulo', usuario)
   }
   
 }

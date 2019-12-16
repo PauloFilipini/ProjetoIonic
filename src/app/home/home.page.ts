@@ -24,7 +24,6 @@ export class HomePage {
     this.RestaurantesService.getRestaurantes()
     .then((restaurantes: Restaurantes[] )  => {
        this.restaurantes = restaurantes
-       console.log('restaurantes', restaurantes)
     })
     .catch((err) =>{
       console.log(err)

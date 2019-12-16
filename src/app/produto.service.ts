@@ -29,7 +29,6 @@ export class ProdutoService {
                     const produtos = id.filter(produto => produto.restaurantId == idp )
                     ;
                         resolve(produtos) 
-                    console.log('ola',produtos)
                 })
                 .catch(err => reject(err))
         })

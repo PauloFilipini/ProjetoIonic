@@ -36,7 +36,6 @@ export class CarrinhoPage implements OnInit {
   ngOnInit() {
     this.total = this.carrinhoService.totalCarrinhoCompras()
     this.itensCarrinho = this.carrinhoService.exibirItens()
-    console.log(this.carrinhoService.exibirItens())
   }
   public confirmarCompra(): void {
     
@@ -47,7 +46,6 @@ export class CarrinhoPage implements OnInit {
       this.formulario.value.formaPagamento,
       this.carrinhoService.exibirItens()
       )
-        console.log('FINAL DO Pedido', pedido)
         this.pedidoService.efetivarCompra(pedido)
         .subscribe((idPedido: number) =>{
           this.idPedidoCompra = idPedido,

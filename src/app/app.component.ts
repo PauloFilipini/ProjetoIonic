@@ -53,7 +53,6 @@ export class AppComponent {
     this.subscription = this.autenticacao.subject
     .subscribe((res) => {
       this.logado = this.autenticacao.autenticado();
-      console.log('logou/deslogou: ', this.logado);
     })
   }
   

@@ -57,12 +57,10 @@ export class RestaurantePage implements OnInit {
       this.produtoService.getProdutoByRestaurantId(parametros.get("id"))
       .then(( produtos: Produto[] ) =>{
         this.produtos = produtos
-        console.log('paulo', produtos)
       })
     })
     this.itensCarrinho = this.carrinhoService.exibirItens()
     this.total = this.carrinhoService.totalCarrinhoCompras()
-    //console.log(this.itensCarrinho)
   }
   public adicionarItemCarrinho(produto: Produto): void {
     this.carrinhoService.incluirItem(produto)
