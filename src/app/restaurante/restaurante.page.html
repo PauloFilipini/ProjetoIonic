@@ -1,9 +1,13 @@
 <ion-header>
-  <ion-toolbar>
+    <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
+    <ion-row>
     <ion-title>restaurante</ion-title>
+    <a routerLink="/carrinho">
+      <ion-icon name="cart" class="car"></ion-icon>
+  </a></ion-row>
   </ion-toolbar>
 </ion-header>
 <ion-content *ngIf="restaurante !== undefined">         
