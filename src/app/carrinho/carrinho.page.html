@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content>
           <form [formGroup]="formulario"  (ngSubmit) = "confirmarCompra()">
-            <ion-card>
+            <ion-card>  
                 <div class="form-group">
                   <ion-input type="text" 
                   class="form-control"
@@ -35,42 +35,34 @@
                   >      </ion-input>                 
               </div>
             </ion-card>
-            <ion-card>
+            <ion-card class ="padding">
             <div class="row">
-              <div class="col-xs-12">
-                
-                <p class="lead">Itens do Pedido:</p>
-              </div>
-              <div class="col-xs-12 table-responsive">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th class="text-center">Quantidade</th>
-                      <th>Item</th>
-                      <th>Descrição</th>
-                      <th class="text-right">Subtotal</th>
-                      <th class="text-right"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let itens of itensCarrinho">
-                      <td class="text-center">
+              <h5 class = "itens">
+                Itens do Pedido
+              </h5>
+              <tr *ngFor="let itens of itensCarrinho">
+                <ion-col>
+                      <th class="text-center">Quantidade:</th>
+                      <ion-col>
                         <a class="btn btn-sm" (click)="diminuir(itens)"><i class="fa fa-minus"></i></a>
                         {{itens.quantidade}}
                         <a class="btn btn-sm" (click)="adicionar(itens)"><i class="fa fa-plus"></i></a>
-                      </td>
-                      <td>{{ itens.item }}</td>
-                      <td>{{ itens.descricao }}</td>
-                      <td class="text-right">{{ itens.subtotal | currency:'BRL' }}</td>
-                      <td class="text-right">
-                        <a class="btn btn-sm danger" (click)="remover(itens)"><i class="fa fa-remove"></i></a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                      </ion-col>
+                    </ion-col>
+                <ion-col>
+                      <th>Item:</th>
+                      <ion-col>
+                        <td>{{ itens.item }}</td>
+                      </ion-col>
+                    </ion-col>
+                    <ion-col>
+                      <th class="text-right">Subtotal:</th>
+                      <ion-col>
+                        <td class="text-right">{{ itens.subtotal | currency:'BRL' }}</td>
+                      </ion-col>
+                    </ion-col>  
+                  </tr>
             </div>
-            
           </ion-card>
           <ion-card>
                 <p class="lead">Formas de Pagamento:</p>
