@@ -16,7 +16,7 @@ import { CarrinhoService } from '../carrinho.service'
   providers: [ RestaurantesService, ProdutoService ]
 })
 export class RestaurantePage implements OnInit {
-
+  soma
   public produtos: Produto[] = []
   public itensCarrinho: ItemCarrinho[] = []
   public total: number = 0
@@ -61,12 +61,15 @@ export class RestaurantePage implements OnInit {
     })
     this.itensCarrinho = this.carrinhoService.exibirItens()
     this.total = this.carrinhoService.totalCarrinhoCompras()
+
+    
   }
   public adicionarItemCarrinho(produto: Produto): void {
     this.carrinhoService.incluirItem(produto)
     this.itensCarrinho = this.carrinhoService.exibirItens()
     this.total = this.carrinhoService.totalCarrinhoCompras()
     console.log('carrinho2', this.itensCarrinho)
+    console.log('paulo', this.itensCarrinho.length)
   }
 
   public limparCarrinho(produto: Produto): void {

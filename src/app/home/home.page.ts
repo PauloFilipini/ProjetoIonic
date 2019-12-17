@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { Autenticacao } from './../autenticacao.service';
 import { Restaurantes } from './../module/restaurante.model'
+import { ItemCarrinho } from '../module/item-carrinho.model'
 import { RestaurantesService } from './../restaurantes.service';
 import {CarrinhoService} from './../carrinho.service'
 @Component({
@@ -12,16 +13,17 @@ import {CarrinhoService} from './../carrinho.service'
   
 })
 export class HomePage {
+  public itensCarrinho: ItemCarrinho[] = []
+
 
   public restaurantes: Restaurantes[]
-  soma
   constructor(private autenticacao:Autenticacao,
     private router: Router,
     private RestaurantesService: RestaurantesService,
     private carrinhoService: CarrinhoService) {}
     
   ngOnInit() {
-    
+    this.itensCarrinho = this.carrinhoService.exibirItens()
     this.RestaurantesService.getRestaurantes()
     .then((restaurantes: Restaurantes[] )  => {
        this.restaurantes = restaurantes
@@ -30,8 +32,7 @@ export class HomePage {
       console.log(err)
     })
 
-    this.soma = this.carrinhoService.totalCarrinhoCompras()
-    console.log('paulo', this.soma.lenght)
+
   }
   ngOnDestroy() {
    this.autenticacao.token_id
