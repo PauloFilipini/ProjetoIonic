@@ -30,7 +30,7 @@
 </ion-card>
   <ion-card>
   <div *ngFor="let produto of produtos">
-    <ion-row>
+    <ion-row (click)="adicionarItemCarrinho(produto)"> 
       <ion-col>
         <ion-card>
           <span class="menu-item-info-box-icon"><img [src]="produto.imagePath"></span>

@@ -50,6 +50,7 @@ export class CarrinhoPage implements OnInit {
         this.pedidoService.efetivarCompra(pedido)
           this.carrinhoService.limparCarrinho()
           this.router.navigate(['/pedido-completo'])
+          this.itensCarrinho.length = 0
       }
   
 

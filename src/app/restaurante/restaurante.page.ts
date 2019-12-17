@@ -76,6 +76,7 @@ export class RestaurantePage implements OnInit {
     this.carrinhoService.limparCarrinho()
     this.itensCarrinho = this.carrinhoService.exibirItens()
     this.total = this.carrinhoService.totalCarrinhoCompras()
+    this.itensCarrinho.length = 0
   }
 
 }
