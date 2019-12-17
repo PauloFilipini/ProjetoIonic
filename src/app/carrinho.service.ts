@@ -3,7 +3,7 @@ import { Produto } from './module/produto.model'
 
 class CarrinhoService {
     public itens: ItemCarrinho[] = []
-
+    somador
     public exibirItens(): ItemCarrinho[] {
         console.log('itens', this.itens)
         return this.itens
@@ -29,6 +29,7 @@ class CarrinhoService {
         } else {
             this.itens.push(itemCarrinho)
         }
+       
     }
 
     public totalCarrinhoCompras(): number {
