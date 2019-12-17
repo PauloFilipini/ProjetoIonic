@@ -30,7 +30,8 @@ const routes: Routes = [
   {
     path: 'restaurante/:id',
     loadChildren: () => import('./restaurante/restaurante.module').then( m => m.RestaurantePageModule),
-  },  {
+  },
+  {
     path: 'pedido-completo',
     loadChildren: () => import('./pedido-completo/pedido-completo.module').then( m => m.PedidoCompletoPageModule)
   },

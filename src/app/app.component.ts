@@ -5,7 +5,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Subscription } from 'rxjs';
-
+import { Router } from '@angular/router';
 import * as firebase from 'firebase'
 
 @Component({
@@ -20,10 +20,12 @@ export class AppComponent {
   logado: boolean  = false 
 
   constructor(
+    private router: Router,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private autenticacao: Autenticacao
+    private autenticacao: Autenticacao,
+    
   ) {
     this.initializeApp();
     
@@ -54,6 +56,9 @@ export class AppComponent {
     .subscribe((res) => {
       this.logado = this.autenticacao.autenticado();
     })
+    if(this.autenticacao.autenticado()){
+      this.router.navigate(['/home'])
+    }
   }
   
 }
