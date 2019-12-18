@@ -1,5 +1,5 @@
-import { ItemCarrinho } from './module/item-carrinho.model'
-import { Produto } from './module/produto.model'
+import { ItemCarrinho } from '../module/item-carrinho.model'
+import { Produto } from '../module/produto.model'
 
 class CarrinhoService {
     public itens: ItemCarrinho[] = []

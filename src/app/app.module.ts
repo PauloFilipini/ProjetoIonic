@@ -1,7 +1,7 @@
 import { environment } from './../environments/environment';
-import { RestaurantesService } from './restaurantes.service';
-import { Autenticacao } from './autenticacao.service';
-import {CarrinhoService} from './carrinho.service'
+import { RestaurantesService } from './services/restaurantes.service';
+import { Autenticacao } from './services/autenticacao.service';
+import {CarrinhoService} from './services/carrinho.service'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';

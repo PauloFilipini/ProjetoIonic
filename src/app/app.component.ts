@@ -1,5 +1,5 @@
-import { RestaurantesService } from './restaurantes.service';
-import { Autenticacao } from './autenticacao.service';
+import { RestaurantesService } from './services/restaurantes.service';
+import { Autenticacao } from './services/autenticacao.service';
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';

@@ -1,6 +1,6 @@
 import { AlertController, Platform } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import { Autenticacao } from './../autenticacao.service';
+import { Autenticacao } from '../services/autenticacao.service';
 import { FormGroup, FormControl} from '@angular/forms';
 
 

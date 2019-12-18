@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { Autenticacao } from './../autenticacao.service';
+import { Autenticacao } from '../services/autenticacao.service';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';

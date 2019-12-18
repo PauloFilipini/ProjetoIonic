@@ -1,4 +1,4 @@
-import { Restaurantes } from './module/restaurante.model'
+import { Restaurantes } from '../module/restaurante.model'
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase'

@@ -1,4 +1,4 @@
-import { Produto } from './module/produto.model';
+import { Produto } from '../module/produto.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase'

@@ -1,10 +1,10 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { Autenticacao } from './../autenticacao.service';
+import { Autenticacao } from '../services/autenticacao.service';
 import { Restaurantes } from './../module/restaurante.model'
 import { ItemCarrinho } from '../module/item-carrinho.model'
-import { RestaurantesService } from './../restaurantes.service';
-import {CarrinhoService} from './../carrinho.service'
+import { RestaurantesService } from '../services/restaurantes.service';
+import {CarrinhoService} from '../services/carrinho.service'
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',

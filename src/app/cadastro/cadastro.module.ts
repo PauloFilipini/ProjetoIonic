@@ -1,4 +1,4 @@
-import { Autenticacao } from './../autenticacao.service';
+import { Autenticacao } from '../services/autenticacao.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

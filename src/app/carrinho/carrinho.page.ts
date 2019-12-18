@@ -6,8 +6,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { ItemCarrinho } from './../module/item-carrinho.model';
 import { Pedido } from './../module/pedido.model';
 
-import { CarrinhoService } from  './../carrinho.service';
-import { PedidoService } from './../pedido.service';
+import { CarrinhoService } from  '../services/carrinho.service';
+import { PedidoService } from '../services/pedido.service';
 
 @Component({
   selector: 'app-carrinho',

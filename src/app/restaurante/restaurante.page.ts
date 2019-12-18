@@ -5,9 +5,9 @@ import { Restaurantes } from './../module/restaurante.model';
 import { Produto } from '../module/produto.model';
 import { ItemCarrinho } from '../module/item-carrinho.model'
 
-import { RestaurantesService } from '../restaurantes.service'
-import { ProdutoService } from '../produto.service'
-import { CarrinhoService } from '../carrinho.service'
+import { RestaurantesService } from '../services/restaurantes.service'
+import { ProdutoService } from '../services/produto.service'
+import { CarrinhoService } from '../services/carrinho.service'
 
 @Component({
   selector: 'app-restaurante',
