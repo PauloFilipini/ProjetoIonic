@@ -23,7 +23,6 @@ export class HomePage {
     private carrinhoService: CarrinhoService) {}
     
   ngOnInit() {
-    this.itensCarrinho = this.carrinhoService.exibirItens()
     this.RestaurantesService.getRestaurantes()
     .then((restaurantes: Restaurantes[] )  => {
        this.restaurantes = restaurantes
